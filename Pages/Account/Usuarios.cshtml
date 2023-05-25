@@ -1,0 +1,46 @@
+﻿@page
+@model CiudadanosSanos.Pages.Account.UsuariosModel
+@{
+    ViewData["Title"] = "Usuarios";
+}
+
+<h1>Usuarios</h1>
+
+@if (Model.Usuarios == null)
+{
+    <form method="post">
+        <div class="form-group">
+            <label for="Codigo">Código de Acceso</label>
+            <input type="password" class="form-control" id="Codigo" name="Codigo" required />
+            <span asp-validation-for="Codigo" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Mostrar Usuarios</button>
+    </form>
+}
+else
+{
+    <h2>Lista de Usuarios</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre Completo</th>
+                <th>Correo Electrónico</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var usuario in Model.Usuarios)
+            {
+                <tr>
+                    <td>@usuario.NombreCompleto</td>
+                    <td>@usuario.CorreoElectronico</td>
+                    <td>
+                        <form method="post" asp-page-handler="Eliminar" asp-route-id="@usuario.Id">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

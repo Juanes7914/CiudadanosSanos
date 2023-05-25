@@ -1,0 +1,22 @@
+﻿@page
+@model CiudadanosSanos.Pages.Account.LogoutModel
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<h1>Logout</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="text-right">
+        <form method="post" id="logoutForm">
+            <button type="submit" class="btn btn-primary">Cerrar sesión</button>
+        </form>
+    </div>
+}
+else
+{
+    <div class="text-right">
+        <a href="/Account/Login" class="btn btn-primary">Iniciar sesión</a>
+    </div>
+}

@@ -16,5 +16,7 @@ namespace CiudadanosSanos.Models
         [Required]
         [DataType(DataType.Password)]
         public string Contrasena { get; set; }
+
+        public string Codigo { get; set; }
     }
 }

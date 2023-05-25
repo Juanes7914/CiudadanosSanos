@@ -1,0 +1,39 @@
+﻿@page
+@model CiudadanosSanos.Pages.Account.CrearUsuarioModel
+@{
+    ViewData["Title"] = "Crear Usuario";
+}
+
+<h1>Crear Usuario</h1>
+
+@if (ViewData.ModelState.ErrorCount > 0)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+
+<form method="post">
+    <div class="form-group">
+        <label for="User_NombreCompleto">Nombre Completo</label>
+        <input type="text" class="form-control" id="User_NombreCompleto" name="User.NombreCompleto" value="@Model.User.NombreCompleto" required />
+    </div>
+    <div class="form-group">
+        <label for="User_CorreoElectronico">Correo Electrónico</label>
+        <input type="email" class="form-control" id="User_CorreoElectronico" name="User.CorreoElectronico" value="@Model.User.CorreoElectronico" required />
+    </div>
+    <div class="form-group">
+        <label for="User_Contrasena">Contraseña</label>
+        <input type="password" class="form-control" id="User_Contrasena" name="User.Contrasena" required />
+    </div>
+    <div class="form-group">
+        <label for="User_Codigo">Código</label>
+        <input type="password" class="form-control" id="User_Codigo" name="User.Codigo" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Crear Usuario</button>
+</form>
