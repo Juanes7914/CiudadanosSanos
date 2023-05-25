@@ -1,0 +1,20 @@
+﻿@page
+@model CiudadanosSanos.Pages.Appoinment.DeleteModel
+@{
+    ViewData["Title"] = "Eliminar Servicio";
+}
+
+<h1>Eliminar Servicio</h1>
+
+<h3>¿Está seguro de que desea eliminar este servicio?</h3>
+<div>
+    <h4>Nombre: @Model.Service.Nombre</h4>
+    <h4>Descripción: @Model.Service.Descripcion</h4>
+    <h4>Precio: @Model.Service.Precio</h4>
+</div>
+
+<form method="post">
+    <input type="hidden" asp-for="Service.Id" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>

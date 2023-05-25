@@ -1,0 +1,32 @@
+﻿@page
+@model CiudadanosSanos.Pages.Appoinment.EditModel
+@{
+    ViewData["Title"] = "Editar Servicio";
+}
+
+<h1>Editar Servicio</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Service.Id" />
+
+    <div class="form-group">
+        <label asp-for="Service.Nombre" class="control-label"></label>
+        <input asp-for="Service.Nombre" class="form-control" />
+        <span asp-validation-for="Service.Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Service.Descripcion" class="control-label"></label>
+        <input asp-for="Service.Descripcion" class="form-control" />
+        <span asp-validation-for="Service.Descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Service.Precio" class="control-label"></label>
+        <input asp-for="Service.Precio" class="form-control" />
+        <span asp-validation-for="Service.Precio" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancelar</a>
+</form>

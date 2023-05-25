@@ -1,0 +1,23 @@
+﻿@page
+@model CiudadanosSanos.Pages.Appoinment.CreateModel
+@{
+    ViewData["Title"] = "Crear Servicio";
+}
+
+<h1>Crear Servicio</h1>
+
+<form method="post">
+    <div class="form-group">
+        <label for="Service_Nombre">Nombre</label>
+        <input type="text" class="form-control" id="Service_Nombre" name="Service.Nombre" value="@Model.Service.Nombre" required />
+    </div>
+    <div class="form-group">
+        <label for="Service_Descripcion">Descripción</label>
+        <input type="text" class="form-control" id="Service_Descripcion" name="Service.Descripcion" value="@Model.Service.Descripcion" required />
+    </div>
+    <div class="form-group">
+        <label for="Service_Precio">Precio</label>
+        <input type="number" class="form-control" id="Service_Precio" name="Service.Precio" value="@Model.Service.Precio" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Crear</button>
+</form>

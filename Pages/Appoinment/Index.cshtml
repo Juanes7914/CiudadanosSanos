@@ -1,0 +1,37 @@
+﻿@page
+@model CiudadanosSanos.Pages.Appoinment.IndexModel
+@{
+    ViewData["Title"] = "Lista de Servicios";
+}
+
+<h1>Lista de Citas</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Nueva Cita</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var service in Model.Services)
+        {
+            <tr>
+                <td>@service.Nombre</td>
+                <td>@service.Descripcion</td>
+                <td>@service.Precio</td>
+                <td>
+                    <form method="post" asp-page-handler="Delete" asp-route-id="@service.Id" onsubmit="return confirm('¿Estás seguro de que quieres eliminar este servicio?')">
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
