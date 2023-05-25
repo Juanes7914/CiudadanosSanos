@@ -1,0 +1,57 @@
+﻿@page
+@model CiudadanosSanos.Pages.Patient.CreateModel
+@{
+    ViewData["Title"] = "Crear Paciente";
+}
+
+<h1>Crear Paciente</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Patient.NombreCompleto" class="control-label">Nombre Completo</label>
+                <input asp-for="Patient.NombreCompleto" class="form-control" />
+                <span asp-validation-for="Patient.NombreCompleto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patient.CedulaCiudadania" class="control-label">Cédula de Ciudadanía</label>
+                <input asp-for="Patient.CedulaCiudadania" class="form-control" />
+                <span asp-validation-for="Patient.CedulaCiudadania" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patient.Edad" class="control-label">Edad</label>
+                <input asp-for="Patient.Edad" class="form-control" />
+                <span asp-validation-for="Patient.Edad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patient.Enfermedades" class="control-label">Enfermedades</label>
+                <input asp-for="Patient.Enfermedades" class="form-control" />
+                <span asp-validation-for="Patient.Enfermedades" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patient.Alergias" class="control-label">Alergias</label>
+                <input asp-for="Patient.Alergias" class="form-control" />
+                <span asp-validation-for="Patient.Alergias" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patient.Direccion" class="control-label">Dirección</label>
+                <input asp-for="Patient.Direccion" class="form-control" />
+                <span asp-validation-for="Patient.Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Patient.NumeroTelefonico" class="control-label">Número Telefónico</label>
+                <input asp-for="Patient.NumeroTelefonico" class="form-control" />
+                <span asp-validation-for="Patient.NumeroTelefonico" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Volver a la lista</a>
+</div>
