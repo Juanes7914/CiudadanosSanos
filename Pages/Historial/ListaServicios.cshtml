@@ -1,0 +1,42 @@
+﻿@page "/Historial/ListaServicios"
+@model CiudadanosSanos.Pages.Historial.ListaServiciosModel
+
+<style>
+    .column-heading {
+        padding: 10px;
+    }
+
+    .column-data {
+        padding: 10px;
+        vertical-align: top;
+    }
+</style>
+
+<h1>Lista de Servicios</h1>
+
+@if (Model != null && Model.Services != null && Model.Services.Any())
+{
+    <table>
+        <thead>
+            <tr>
+                <th class="column-heading">Nombre</th>
+                <th class="column-heading">Descripción</th>
+                <th class="column-heading">Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var servicio in Model.Services)
+            {
+                <tr>
+                    <td>@servicio.Nombre</td>
+                    <td>@servicio.Descripcion</td>
+                    <td>@servicio.Precio</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No hay servicios disponibles.</p>
+}

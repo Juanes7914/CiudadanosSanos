@@ -22,7 +22,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
                         </li>
-                        @if (!User.Identity.IsAuthenticated)
+                        @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Account/Usuarios">Usuarios</a>
@@ -34,6 +34,9 @@
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Appoinment/Index">Citas</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/Historial/ListaServicios">Historial</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                             </li>
                         }
@@ -42,7 +45,7 @@
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
-                                <form method="post" id="logoutForm" class="form-inline">
+                                <form method="post" asp-page="/Account/Logout" id="logoutForm" class="form-inline">
                                     <button type="submit" class="btn btn-link text-dark nav-link">Cerrar sesión</button>
                                 </form>
                             </li>
@@ -80,3 +83,4 @@
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+

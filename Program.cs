@@ -24,7 +24,6 @@ namespace CiudadanosSanos
                  options.LogoutPath = "/Account/Logout";
              });
 
-
             var app = builder.Build();
 
             app.UseHttpsRedirection();
